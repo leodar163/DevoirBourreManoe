@@ -6,8 +6,9 @@ using DG.Tweening;
 public class Viseur : MonoBehaviour
 {
     [SerializeField] private float angleDepart = 0;
-    [SerializeField] private float angleMax = 45;
+    [SerializeField] private float angleMax = 60;
     [SerializeField] private float vitesseRotation = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +29,13 @@ public class Viseur : MonoBehaviour
 
     private void Viser()
     {
-        print(string.Format("{0} == {1} : {2}", transform.eulerAngles.z, angleMax, transform.eulerAngles.z.Equals(angleMax)));
-        if (transform.localEulerAngles.z == angleMax)
+        float angleActuel = Mathf.Round(transform.localEulerAngles.z);
+        if (angleActuel == angleMax)
         {
-            print("vers la droite");
             transform.DOLocalRotate(Vector3.forward * -angleMax, vitesseRotation).OnComplete(Viser);
         }
-        else if (transform.localEulerAngles.z == 360 - angleMax)
+        else if (angleActuel == 360 - angleMax)
         {
-            print("vers la gauche");
             transform.DOLocalRotate(Vector3.forward * angleMax, vitesseRotation).OnComplete(Viser);
         }
     }
