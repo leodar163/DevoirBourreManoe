@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class Cuby : MonoBehaviour
 {
     [SerializeField] private Viseur viseur;
     [SerializeField] private float tmpsDash = 1;
+    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] PorteMonnaie porteMonnaie;
     private bool peutDasher = true;
 
     // Start is called before the first frame update
@@ -34,6 +37,20 @@ public class Cuby : MonoBehaviour
     {
         if(peutDasher)
         {
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, viseur.transform.up, Mathf.Infinity, LayerMask.GetMask("Piece"));
+            
+            for (int i = 0; i < hits.Length; i++)
+            {
+                Piece piece;
+                if (hits[i].collider.TryGetComponent(out piece))
+                {
+                    porteMonnaie.Incrementer();
+                    piece.Detruire();
+                }
+
+            }
+
+
             RaycastHit rayCast;
             if (Physics.Raycast(transform.position, viseur.transform.up, out rayCast, Mathf.Infinity, LayerMask.GetMask("Surface")))
             {
@@ -52,6 +69,8 @@ public class Cuby : MonoBehaviour
 
 
             }
+
+            
         }
     }
 
@@ -68,4 +87,13 @@ public class Cuby : MonoBehaviour
             Gizmos.DrawLine(transform.position, viseur.transform.up * 10000);
         }
     }
+
+
+    public void GameOver()
+    {
+        text.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    
 }

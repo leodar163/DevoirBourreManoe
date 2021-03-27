@@ -5,8 +5,8 @@ using TMPro;
 
 public class MurDeFlammes : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private float vitesse = 3.0f;
+    [SerializeField] private Cuby cuby;
     [SerializeField] private int hauteur;
     private bool arreteDeBouger = false;
 
@@ -49,11 +49,10 @@ public class MurDeFlammes : MonoBehaviour
         Cuby player;
         if (other.transform.parent.TryGetComponent(out player))
         {
-            text.gameObject.SetActive(true);
-            Destroy(player.gameObject);
-            Time.timeScale = 0;
+            cuby.GameOver();
             arreteDeBouger = true;
         }
+        
         
     }
 }
