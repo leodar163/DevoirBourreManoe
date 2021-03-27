@@ -26,11 +26,11 @@ using UnityEngine;
         }
         private void SuivreCuby()
         {
-            Vector3 positionSouris = cam.ScreenToWorldPoint(Input.mousePosition);
-
             Vector3 positionASuivre = cuby.transform.position;
+        positionASuivre.y = 0;
 
-            Vector3 prochainePosition = Vector2.Lerp(transform.position, positionASuivre, 1 * Time.deltaTime * vitesse);
+        Vector2 velocity = Vector2.zero;
+            Vector3 prochainePosition = Vector2.SmoothDamp(transform.position, positionASuivre, ref velocity,Time.deltaTime * vitesse);
             prochainePosition.z = transform.position.z;
 
             transform.position = prochainePosition;

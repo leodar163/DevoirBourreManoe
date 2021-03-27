@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleDepart: 0
   angleMax: 60
-  vitesseRotation: 3
+  vitesseRotation: 1.5
 --- !u!1 &3827835508990534419
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viseur: {fileID: 3827835508074176476}
+  tmpsDash: 1
 --- !u!1 &3827835509557472951
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,5 +286,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
