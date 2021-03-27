@@ -13,21 +13,31 @@ public class Niveau : MonoBehaviour
     private float extremiteDroite = 0;
     private float extremiteGauche = 0;
 
+    private void Reset()
+    {
+        cuby = FindObjectOfType<Cuby>();
+    }
+
+    private void OnValidate()
+    {
+        if (!cuby) cuby = FindObjectOfType<Cuby>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        VerifPositionCuby();        
+        VerifPositionCuby();
     }
 
     private void VerifPositionCuby()
     {
-        if(extremiteDroite - cuby.transform.position.x <= distanceAffichage)
+        if (extremiteDroite - cuby.transform.position.x <= distanceAffichage)
         {
             AjouterSection();
         }
@@ -37,25 +47,26 @@ public class Niveau : MonoBehaviour
         }
     }
 
-    public void RetirerSection()
+    private void RetirerSection()
     {
-        Section sectionARetirer = sections[0];
-        extremiteGauche += sectionARetirer.longueur;
-        sections.Remove(sectionARetirer);
-        Destroy(sectionARetirer.gameObject);
+        if (sections.Count > 0)
+        {
+            Section sectionARetirer = sections[0];
+            extremiteGauche += sectionARetirer.longueur;
+            sections.Remove(sectionARetirer);
+            Destroy(sectionARetirer.gameObject);
+        }
     }
 
-    public void AjouterSection()
+    private void AjouterSection()
     {
         int alea = Random.Range(0, prefabSections.Length - 1);
         Section nvlleSection;
-        if(Instantiate(prefabSections[alea].gameObject, transform).TryGetComponent(out nvlleSection))
+        if (Instantiate(prefabSections[alea].gameObject, transform).TryGetComponent(out nvlleSection))
         {
             nvlleSection.transform.position = new Vector3(extremiteDroite + nvlleSection.longueur / 2, 0, 0);
             extremiteDroite += nvlleSection.longueur;
             sections.Add(nvlleSection);
         }
     }
-
-        
 }
