@@ -19,7 +19,7 @@ public class MurDeFlammes : MonoBehaviour
 
     private void OnValidate()
     {
-        transform.localScale = new Vector3(transform.localScale.x, hauteur, transform.localScale.y);
+        transform.localScale = new Vector3(transform.localScale.x, hauteur, transform.localScale.z);
     }
 
     private void Move()
@@ -51,6 +51,7 @@ public class MurDeFlammes : MonoBehaviour
         {
             text.gameObject.SetActive(true);
             Destroy(player.gameObject);
+            Time.timeScale = 0;
             arreteDeBouger = true;
         }
         
