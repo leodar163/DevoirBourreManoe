@@ -35,9 +35,11 @@ public class Cuby : MonoBehaviour
         {
             viseur.gameObject.SetActive(false);
             Time.timeScale = 0.01f;
-            transform.DOMove(rayCast.transform.position, 1.5f * Time.timeScale).OnComplete(() => {
+            transform.up = rayCast.normal;
+            transform.DOMove(rayCast.point, 1.5f * Time.timeScale).OnComplete(() => {
                 Time.timeScale = 1;
                 viseur.gameObject.SetActive(true);
+                
             });
             
             
