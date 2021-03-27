@@ -37,10 +37,14 @@ public class Cuby : MonoBehaviour
     {
         if(peutDasher)
         {
-            RaycastHit[] hits = Physics.RaycastAll(transform.position, viseur.transform.up, Mathf.Infinity, LayerMask.GetMask("Piece"));
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, viseur.transform.up, Mathf.Infinity, LayerMask.GetMask("Piece", "Surface"));
             
             for (int i = 0; i < hits.Length; i++)
             {
+                if (hits[i].collider.gameObject.layer == 6)
+                {
+                    break;
+                }
                 Piece piece;
                 if (hits[i].collider.TryGetComponent(out piece))
                 {
