@@ -17,12 +17,12 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
-
+            SuivreCuby();
         }
 
         private void FixedUpdate()
         {
-            SuivreCuby();
+            
         }
         private void SuivreCuby()
         {
