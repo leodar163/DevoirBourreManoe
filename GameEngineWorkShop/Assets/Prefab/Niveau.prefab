@@ -49,10 +49,7 @@ MonoBehaviour:
   cuby: {fileID: 0}
   prefabSections:
   - {fileID: 141693144024434143, guid: d828d306a7969b940aa6cd5e863b6857, type: 3}
-  ligneArrivee: {fileID: 8040909650032222615, guid: 81f872f073d9f2948ba8c3a20632bece, type: 3}
-  murEnFlamme: {fileID: 5428675477809013036, guid: 52ee805aef7aba04bb8c6a9107239d50, type: 3}
   distanceAffichage: 40
-  tailleNiveau: 10
 --- !u!1001 &3989504938369159569
 PrefabInstance:
   m_ObjectHideFlags: 0
