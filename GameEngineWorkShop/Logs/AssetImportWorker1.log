@@ -1,0 +1,112 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.6f1 (8a2143876886) revision 9052483'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 18362.535; Version 1903; 64bit' Language: 'fr' Physical Memory: 8085 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+A:\Editor Unity\2020.2.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+A:/Multimedia/Documents/Unity/DevoirManoe/Devoir/DevoirBourreManoe/GameEngineWorkShop
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+56477
+Successfully changed project path to: A:/Multimedia/Documents/Unity/DevoirManoe/Devoir/DevoirBourreManoe/GameEngineWorkShop
+A:/Multimedia/Documents/Unity/DevoirManoe/Devoir/DevoirBourreManoe/GameEngineWorkShop
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 31.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.6f1 (8a2143876886)
+[Subsystems] Discovering subsystems at path A:/Editor Unity/2020.2.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path A:/Multimedia/Documents/Unity/DevoirManoe/Devoir/DevoirBourreManoe/GameEngineWorkShop/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   
+    VRAM:     6052 MB
+    Driver:   27.21.14.6109
+Initialize mono
+Mono path[0] = 'A:/Editor Unity/2020.2.6f1/Editor/Data/Managed'
+Mono path[1] = 'A:/Editor Unity/2020.2.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'A:/Editor Unity/2020.2.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56164
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: A:/Editor Unity/2020.2.6f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: A:/Editor Unity/2020.2.6f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: A:/Editor Unity/2020.2.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001145 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 29.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.867 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001731 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.741 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.22 seconds
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1458 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.2 MB.
+System memory in use after: 68.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 1889.
+Total: 1.616400 ms (FindLiveObjects: 0.235600 ms CreateObjectMapping: 0.060900 ms MarkObjects: 1.241900 ms  DeleteObjects: 0.077100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Props
+  artifactKey: Guid(723262aad46b66d458623ff5e8576e17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props using Guid(723262aad46b66d458623ff5e8576e17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a7e84de7533bd9c0591d54c63afaf33') in 0.044289 seconds
+  Import took 0.085665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 50.152966 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f47cf443bddc682ac2de11ea429897ce') in 0.067772 seconds
+  Import took 0.090498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.030618 seconds.
+  path: Assets/Sprites
+  artifactKey: Guid(ad4b1a863bc922c4cacb2e87e8425d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites using Guid(ad4b1a863bc922c4cacb2e87e8425d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7675fce22c7c63bef5c45551a1b44a6d') in 0.002336 seconds
+  Import took 0.005306 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.632797 seconds.
+  path: Assets/Shaders
+  artifactKey: Guid(1715fd9e392f4c24e91d2c70e3c12c68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders using Guid(1715fd9e392f4c24e91d2c70e3c12c68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fed62626e7ba588100b2b63bc95fddb') in 0.064705 seconds
+  Import took 0.087342 seconds .
+
