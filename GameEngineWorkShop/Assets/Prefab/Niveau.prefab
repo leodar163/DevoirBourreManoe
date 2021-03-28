@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 7782538712189684133}
   - component: {fileID: 8775489177569418418}
   - component: {fileID: 8261478633326625563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Podium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 042e70e1914e5f24a8c8a294298ab8f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,6 +198,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3242451054597208223}
     m_Modifications:
+    - target: {fileID: 4782420380556642170, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.3510647e-38
+      objectReference: {fileID: 0}
     - target: {fileID: 6251260430318664070, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
       propertyPath: m_Name
       value: SectionDepart (1)
@@ -246,6 +250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8865070295010396449, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.3510647e-38
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
 --- !u!4 &7639274055494101171 stripped
@@ -274,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428675477809013024, guid: 52ee805aef7aba04bb8c6a9107239d50, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.5
+      value: -35.86
       objectReference: {fileID: 0}
     - target: {fileID: 5428675477809013024, guid: 52ee805aef7aba04bb8c6a9107239d50, type: 3}
       propertyPath: m_LocalPosition.y
@@ -312,6 +320,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428675477809013026, guid: 52ee805aef7aba04bb8c6a9107239d50, type: 3}
+      propertyPath: vitesse
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5428675477809013036, guid: 52ee805aef7aba04bb8c6a9107239d50, type: 3}
       propertyPath: m_Name
       value: MurDeFlammes
@@ -330,6 +342,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3242451054597208223}
     m_Modifications:
+    - target: {fileID: 4782420380556642170, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782420380556642170, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6251260430318664070, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
       propertyPath: m_Name
       value: SectionDepart
@@ -377,6 +397,18 @@ PrefabInstance:
     - target: {fileID: 6726608582159923490, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865070295010396449, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 7.4e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865070295010396449, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865070295010396449, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b9865e5526f18d408bd1f05da170540, type: 3}

@@ -102,6 +102,7 @@ public class Cuby : MonoBehaviour
 
     private IEnumerator GameOver()
     {
+        peutDasher = false;
         psMort.Play();
         cameraMan.TremblerEcran(1, 0.5f);
         visuMesh.gameObject.SetActive(false);

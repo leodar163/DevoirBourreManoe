@@ -5,9 +5,20 @@ using DG.Tweening;
 
 public class Viseur : MonoBehaviour
 {
-    [SerializeField] private float angleDepart = 0;
     [SerializeField] private float angleMax = 60;
     [SerializeField] private float vitesseRotation = 3;
+
+    [Range(0,1)] public float test;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + transform.parent.right * 2);
+    }
+
+    private void OnEnable()
+    {
+        InitVisee();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -18,25 +29,34 @@ public class Viseur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void InitVisee()
     {
-        transform.Rotate(Vector3.forward, angleDepart);
-        transform.DOLocalRotate(Vector3.forward * angleMax, vitesseRotation / 2).OnComplete(Viser);
+        StopAllCoroutines();
+        transform.localRotation = Quaternion.Euler(0,0,angleMax);
+        StartCoroutine(Viser());
     }
 
-    private void Viser()
+
+    private IEnumerator Viser()
     {
         float angleActuel = Mathf.Round(transform.localEulerAngles.z);
-        if (angleActuel == angleMax)
+        float angleCilble = angleActuel == angleMax ? 360 - angleMax : angleActuel == 360 - angleMax ? angleMax : angleMax;
+        float angleDepart = angleActuel;
+
+        float tmpsLerp = 0;
+
+        while (angleActuel != angleCilble)
         {
-            transform.DOLocalRotate(Vector3.forward * -angleMax, vitesseRotation).OnComplete(Viser);
+            print(string.Format("{0} == {1}", angleActuel, angleCilble));
+            transform.localRotation = Quaternion.Lerp(Quaternion.AngleAxis(angleDepart, Vector3.forward), Quaternion.AngleAxis(angleCilble, Vector3.forward), tmpsLerp);
+            angleActuel = Mathf.Round(transform.localEulerAngles.z);
+            yield return new WaitForEndOfFrame();
+            tmpsLerp += Time.deltaTime * vitesseRotation;
         }
-        else if (angleActuel == 360 - angleMax)
-        {
-            transform.DOLocalRotate(Vector3.forward * angleMax, vitesseRotation).OnComplete(Viser);
-        }
+
+        StartCoroutine(Viser());
     }
 }
