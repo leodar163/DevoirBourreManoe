@@ -7,6 +7,13 @@ using TMPro;
 
 public class MenuDebut : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI meilleurScore;
+
+    private void Awake()
+    {
+        AfficherMeilleurScore();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +24,12 @@ public class MenuDebut : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AfficherMeilleurScore()
+    {
+        int reccord = PlayerPrefs.GetInt("Reccord");
+        meilleurScore.text = "Reccord : \n" + reccord;
     }
 
     public void Jouer()
