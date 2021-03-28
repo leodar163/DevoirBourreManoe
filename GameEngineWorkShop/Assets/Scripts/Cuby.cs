@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Cuby : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem psMort;
     [SerializeField] private CameraMan cameraMan;
     [SerializeField] private GameObject visuMesh;
     [SerializeField] private Viseur viseur;
@@ -18,7 +20,9 @@ public class Cuby : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameOver.AddListener(GameOver);
+        gameOver.AddListener(() => {
+            StartCoroutine(GameOver());
+            });
     }
 
     // Update is called once per frame
@@ -96,9 +100,22 @@ public class Cuby : MonoBehaviour
         }
     }
 
-    private void GameOver()
+    private IEnumerator GameOver()
     {
-        Time.timeScale = 0;
+        psMort.Play();
+        cameraMan.TremblerEcran(1, 0.5f);
+        visuMesh.gameObject.SetActive(false);
+        viseur.gameObject.SetActive(false);
+
+        PlayerPrefs.SetInt("Monnaie", porteMonnaie.coins);
+
+        while(psMort.isPlaying)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        
+        
+        SceneManager.LoadSceneAsync("MenuFin");
     }
 
     

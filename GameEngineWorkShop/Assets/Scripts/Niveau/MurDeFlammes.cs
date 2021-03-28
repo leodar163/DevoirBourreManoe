@@ -6,7 +6,6 @@ using TMPro;
 public class MurDeFlammes : MonoBehaviour
 {
     [SerializeField] private float vitesse = 3.0f;
-    [SerializeField] private Cuby cuby;
     [SerializeField] private int hauteur;
     private bool arreteDeBouger = false;
 
@@ -45,12 +44,10 @@ public class MurDeFlammes : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         Cuby player;
-        if (other.transform.parent.TryGetComponent(out player))
+        if (other.transform.parent.parent.TryGetComponent(out player))
         {
-            cuby.gameOver.Invoke();
-            arreteDeBouger = true;
+            player.gameOver.Invoke();
         }
         
         
