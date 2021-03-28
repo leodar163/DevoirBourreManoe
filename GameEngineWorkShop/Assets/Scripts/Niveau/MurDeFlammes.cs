@@ -49,7 +49,7 @@ public class MurDeFlammes : MonoBehaviour
         Cuby player;
         if (other.transform.parent.TryGetComponent(out player))
         {
-            cuby.GameOver();
+            cuby.gameOver.Invoke();
             arreteDeBouger = true;
         }
         

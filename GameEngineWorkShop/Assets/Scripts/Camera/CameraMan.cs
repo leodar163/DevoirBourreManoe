@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
     public class CameraMan : MonoBehaviour
     {
@@ -35,6 +36,10 @@ using UnityEngine;
 
             transform.position = prochainePosition;
         }
-
+        
+        public void TremblerEcran(float force, float duree)
+        {
+            transform.DOShakePosition(duree, force);
+        }
     }
 

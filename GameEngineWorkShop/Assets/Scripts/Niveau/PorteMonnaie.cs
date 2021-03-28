@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class PorteMonnaie : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
-    private int coins = 0;
+    public int coins = 0;
+    public UnityEvent quandPieceAjoutee = new UnityEvent();
 
-
-    public void Incrementer()
+    private void Start()
     {
-        coins += 1;
-        text.SetText(coins.ToString());
-        Debug.Log(coins);
+        quandPieceAjoutee.AddListener(Incrementer);
+    }
+
+    private void Incrementer()
+    {
+        coins ++;
     }
 }
