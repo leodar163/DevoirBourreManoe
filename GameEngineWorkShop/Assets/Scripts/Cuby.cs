@@ -43,23 +43,21 @@ public class Cuby : MonoBehaviour
             RaycastHit rayCast;
             if (Physics.Raycast(transform.position, viseur.transform.up, out rayCast, Mathf.Infinity, LayerMask.GetMask("Surface")))
             {
-                RaycastHit[] hits = Physics.RaycastAll(transform.position, viseur.transform.up, Mathf.Infinity, LayerMask.GetMask("Piece", "Surface"));
-
+                RaycastHit[] hits = Physics.RaycastAll(transform.position, viseur.transform.up, Mathf.Infinity, LayerMask.GetMask("Piece"));
                 for (int i = 0; i < hits.Length; i++)
                 {
-                    if (hits[i].collider.gameObject.layer == 6)
+                    if (hits[i].distance > rayCast.distance)
                     {
                         break;
                     }
+
                     Piece piece;
                     if (hits[i].collider.TryGetComponent(out piece))
                     {
                         porteMonnaie.quandPieceAjoutee.Invoke();
                         piece.quandDetruite.Invoke();
                     }
-
                 }
-
 
                 peutDasher = false;
 
@@ -80,11 +78,7 @@ public class Cuby : MonoBehaviour
                     peutDasher = true;
 
                 });
-
-
             }
-
-            
         }
     }   
    

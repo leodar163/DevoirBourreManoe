@@ -31,7 +31,7 @@ using DG.Tweening;
             positionASuivre.y = 0;
 
             Vector2 velocity = Vector2.zero;
-            Vector3 prochainePosition = Vector2.SmoothDamp(transform.position, positionASuivre, ref velocity,Time.deltaTime * vitesse);
+            Vector3 prochainePosition = Vector2.SmoothDamp(transform.position, positionASuivre, ref velocity, 1 / vitesse * Time.timeScale);
             prochainePosition.z = transform.position.z;
 
             transform.position = prochainePosition;
