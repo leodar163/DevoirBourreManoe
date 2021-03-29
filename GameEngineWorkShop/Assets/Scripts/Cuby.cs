@@ -15,6 +15,9 @@ public class Cuby : MonoBehaviour
     [SerializeField] private float tmpsDash = 1;
     [SerializeField] PorteMonnaie porteMonnaie;
 
+    public UnityEvent quandDash = new UnityEvent();
+    public UnityEvent quandAtterit = new UnityEvent();
+
     private bool peutDasher = true;
     public UnityEvent gameOver = new UnityEvent();
 
@@ -48,6 +51,8 @@ public class Cuby : MonoBehaviour
             RaycastHit rayCast;
             if (Physics.Raycast(transform.position, viseur.transform.up, out rayCast, Mathf.Infinity, LayerMask.GetMask("Surface")))
             {
+                quandDash.Invoke();
+
                 RaycastHit[] hits = Physics.RaycastAll(transform.position, viseur.transform.up, Mathf.Infinity, LayerMask.GetMask("Piece"));
                 for (int i = 0; i < hits.Length; i++)
                 {
@@ -74,6 +79,8 @@ public class Cuby : MonoBehaviour
                 cameraMan.pointASuivre = rayCast.point;
 
                 transform.DOMove(rayCast.point, tmpsDash).OnComplete(() => {
+
+                    quandAtterit.Invoke();
 
                     cameraMan.TremblerEcran(0.05f, 0.2f);
 

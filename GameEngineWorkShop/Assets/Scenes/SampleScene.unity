@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
-  cuby: {fileID: 1091009043}
+  pointASuivre: {x: 0, y: 0, z: 0}
   tmpsSuivit: 0.05
 --- !u!114 &963194230
 MonoBehaviour:
@@ -552,17 +552,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &1091009043 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 627946722, guid: 549b8be926c450d488bb4f136e6d1f07, type: 3}
-  m_PrefabInstance: {fileID: 1340843962}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1848c76085403e7468eb747c5c7f10dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1132355621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 765444425049585839, guid: eb141e149b1f19d429bf01bfc008b962, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3242451054597208193, guid: eb141e149b1f19d429bf01bfc008b962, type: 3}
       propertyPath: m_Name
