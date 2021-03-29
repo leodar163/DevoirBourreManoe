@@ -8,13 +8,6 @@ public class Viseur : MonoBehaviour
     [SerializeField] private float angleMax = 60;
     [SerializeField] private float vitesseRotation = 3;
 
-    [Range(0,1)] public float test;
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, transform.position + transform.parent.right * 2);
-    }
-
     private void OnEnable()
     {
         InitVisee();
@@ -50,7 +43,6 @@ public class Viseur : MonoBehaviour
 
         while (angleActuel != angleCilble)
         {
-            print(string.Format("{0} == {1}", angleActuel, angleCilble));
             transform.localRotation = Quaternion.Lerp(Quaternion.AngleAxis(angleDepart, Vector3.forward), Quaternion.AngleAxis(angleCilble, Vector3.forward), tmpsLerp);
             angleActuel = Mathf.Round(transform.localEulerAngles.z);
             yield return new WaitForEndOfFrame();

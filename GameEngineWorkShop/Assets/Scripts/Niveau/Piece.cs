@@ -25,6 +25,7 @@ public class Piece : MonoBehaviour
     private IEnumerator Detruire()
     {
         ps.Play();
+        gameObject.layer = 0; //pour éviter que le joueur puisse touché la piece pendant son animation de destruction
         mesh.SetActive(false);
 
         while(ps.isPlaying)

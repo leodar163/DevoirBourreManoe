@@ -29,6 +29,6 @@ public class GestionnaireCouleurNiveau : MonoBehaviour
         tmpsLerp += Time.deltaTime * vitesseRoulement;
 
         hueActuel = Mathf.Lerp(0, 1, tmpsLerp);
-        MatSruface.SetColor("_EmissionColor", Color.HSVToRGB(hueActuel, 1, 0.5f));
+        MatSruface.SetColor("_Color", Color.HSVToRGB(hueActuel, 1, 0.5f));
     }
 }

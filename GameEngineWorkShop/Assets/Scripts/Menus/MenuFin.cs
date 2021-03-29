@@ -23,7 +23,7 @@ public class MenuFin : MonoBehaviour
     private void VerifReccord()
     {
         int dernierScore = PlayerPrefs.GetInt("Monnaie");
-        print(dernierScore);
+
         if (dernierScore != 0 && dernierScore != default && dernierScore > PlayerPrefs.GetInt("Reccord"))
         {
             PlayerPrefs.SetInt("Reccord", dernierScore);

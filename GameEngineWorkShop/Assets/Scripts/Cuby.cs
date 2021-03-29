@@ -14,6 +14,7 @@ public class Cuby : MonoBehaviour
     [SerializeField] private Viseur viseur;
     [SerializeField] private float tmpsDash = 1;
     [SerializeField] PorteMonnaie porteMonnaie;
+
     private bool peutDasher = true;
     public UnityEvent gameOver = new UnityEvent();
 
@@ -66,16 +67,20 @@ public class Cuby : MonoBehaviour
                 peutDasher = false;
 
                 viseur.gameObject.SetActive(false);
-                Time.timeScale = 0.01f;
-                visuMesh.transform.DOScale(0.1f, 0.2f * Time.timeScale);
-                transform.up = rayCast.normal;
-                transform.DOMove(rayCast.point, tmpsDash * Time.timeScale).OnComplete(() => {
 
-                    Time.timeScale = 1;
-                    if (cameraMan) cameraMan.TremblerEcran(0.5f, 0.3f);
-                    visuMesh.transform.DOScale(1f, 0.1f * Time.timeScale).OnComplete(() => { 
+                visuMesh.transform.DOScale(0.1f, 0.2f);
+                transform.up = rayCast.normal;
+
+                cameraMan.pointASuivre = rayCast.point;
+
+                transform.DOMove(rayCast.point, tmpsDash).OnComplete(() => {
+
+                    cameraMan.TremblerEcran(0.05f, 0.2f);
+
+                    visuMesh.transform.DOScale(1f, 0.1f).OnComplete(() => { 
                     
                         visuMesh.transform.DOPunchScale(-transform.up * 0.4f, 0.3f);
+
                     });
 
                     viseur.gameObject.SetActive(true);

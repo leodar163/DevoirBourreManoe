@@ -16,6 +16,6 @@ public class CompteurDePiece : MonoBehaviour
     public void Incrementer()
     {
         coins++;
-        text.SetText(coins.ToString());
+        text.text = "SCORE {"+ coins +"}";
     }
 }

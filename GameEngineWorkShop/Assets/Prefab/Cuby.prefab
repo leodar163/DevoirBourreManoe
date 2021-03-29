@@ -137,10 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598b6aec73c35b046a77a58d51a45cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleDepart: 0
   angleMax: 70
-  vitesseRotation: 0.8
-  test: 0
+  vitesseRotation: 1.2
 --- !u!1 &3827835508990534419
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +192,7 @@ MonoBehaviour:
   cameraMan: {fileID: 0}
   visuMesh: {fileID: 7419371078026608009}
   viseur: {fileID: 3827835508074176476}
-  tmpsDash: 0.5
+  tmpsDash: 0.1
   porteMonnaie: {fileID: 5793757059175277746}
   gameOver:
     m_PersistentCalls:
