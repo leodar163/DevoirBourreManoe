@@ -24,9 +24,9 @@ public class MenuFin : MonoBehaviour
     {
         int dernierScore = PlayerPrefs.GetInt("Monnaie");
 
-        if (dernierScore != 0 && dernierScore != default && dernierScore > PlayerPrefs.GetInt("Reccord"))
+        if (dernierScore != 0 && dernierScore != default && dernierScore > PlayerPrefs.GetInt("Record"))
         {
-            PlayerPrefs.SetInt("Reccord", dernierScore);
+            PlayerPrefs.SetInt("Record", dernierScore);
 
             AfficherReccord(dernierScore);
         }
@@ -35,6 +35,6 @@ public class MenuFin : MonoBehaviour
     private void AfficherReccord(int nvReccord)
     {
         textReccord.gameObject.SetActive(true);
-        textReccord.text = nvReccord + "\nNOUVEAU RECCORD !";
+        textReccord.text = nvReccord + "\nNOUVEAU RECORD !";
     }
 }

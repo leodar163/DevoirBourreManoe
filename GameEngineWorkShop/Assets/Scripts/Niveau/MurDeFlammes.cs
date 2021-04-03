@@ -7,6 +7,8 @@ public class MurDeFlammes : MonoBehaviour
 {
     [SerializeField] private float vitesse = 3.0f;
     [SerializeField] private int hauteur;
+    [SerializeField] private GameObject player;
+    [SerializeField] private float coefficientVitesse;
     private bool arreteDeBouger = false;
 
 
@@ -23,7 +25,9 @@ public class MurDeFlammes : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(Vector3.right * vitesse * Time.fixedDeltaTime);
+        float dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
+        transform.Translate(Vector3.right * (vitesse + coefficientVitesse * (dist-4.6f)) * Time.fixedDeltaTime);
+        Debug.Log(vitesse + coefficientVitesse * (dist-4.6f));
     }
 
 

@@ -28,8 +28,8 @@ public class MenuDebut : MonoBehaviour
 
     public void AfficherMeilleurScore()
     {
-        int reccord = PlayerPrefs.GetInt("Reccord");
-        meilleurScore.text = "Reccord : \n" + reccord;
+        int reccord = PlayerPrefs.GetInt("Record");
+        meilleurScore.text = "Record : \n" + reccord;
     }
 
     public void Jouer()
