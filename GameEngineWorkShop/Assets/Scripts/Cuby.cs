@@ -14,6 +14,7 @@ public class Cuby : MonoBehaviour
     [SerializeField] private Viseur viseur;
     [SerializeField] private float tmpsDash = 1;
     [SerializeField] PorteMonnaie porteMonnaie;
+    [SerializeField] private EscapeButton echap;
 
     public UnityEvent quandDash = new UnityEvent();
     public UnityEvent quandAtterit = new UnityEvent();
@@ -32,16 +33,26 @@ public class Cuby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AffecterControles();
+
+        if (Time.timeScale != 0)
+        {
+            AffecterControles();
+        }
+        if (!echap.estActive() && Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+
+        }
+
     }
 
-    private void AffecterControles()
+        private void AffecterControles()
     {
         if (Input.GetMouseButtonUp(0))
         {
             Dash();
-
-        }
+        } 
+       
     }
 
     private void Dash()
