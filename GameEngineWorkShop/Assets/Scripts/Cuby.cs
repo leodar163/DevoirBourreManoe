@@ -124,6 +124,7 @@ public class Cuby : MonoBehaviour
 
         while(psMort.isPlaying)
         {
+            peutDasher = false;
             yield return new WaitForEndOfFrame();
         }
         
