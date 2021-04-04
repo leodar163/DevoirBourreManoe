@@ -27,7 +27,7 @@ public class MurDeFlammes : MonoBehaviour
     {
         float dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
         transform.Translate(Vector3.right * (vitesse + coefficientVitesse * (dist-4.6f)) * Time.fixedDeltaTime);
-        Debug.Log(vitesse + coefficientVitesse * (dist-4.6f));
+
     }
 
 

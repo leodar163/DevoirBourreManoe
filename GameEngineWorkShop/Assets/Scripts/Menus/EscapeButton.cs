@@ -44,6 +44,7 @@ public class EscapeButton : MonoBehaviour
 
     public void Menu()
     {
+        Destroy(FindObjectOfType<AudioMusique>().gameObject);
         SceneManager.LoadSceneAsync("MenuDebut");
     }
 
